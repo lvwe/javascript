@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<script type="text/javascript">
+
+function javacalljs(){
+     document.getElementById("content").innerHTML =
+         "<br\>JAVA调用了JS的无参函数";
+}
+
+function javacalljswith(arg){
+     document.getElementById("content").innerHTML =
+         ("<br\>"+arg);
+}
+function callNum(){
+
+         num = document.getElementById("num").value;
+}
+function msgText(){
+
+    msgContent = document.getElementById("msg").value;
+
+}
+</script>
+</head>
+<body>
+HTML 内容显示 <br/>
+<h1><div id="content">内容显示</div></h1>
+<br/>
+<input type="button"  value="点击调用java代码" onclick="window.android.startFunction()" />
+<br/>
+<input type="button"  value="点击调用java代码并传递参数" onclick="window.android.startFunction('http://blog.csdn.net/Leejizhou')"  />
+
+<input type="button"  value="add" onclick="window.android.add(3,4)"  />
+
+<input type="button"  value="ActivityB" onclick="window.android.StartActivity()"  />
+<label for="num">请输入电话号码：</label>
+<input type="number"  id="num" maxlength="11" onblur="callNum()" required autofocus />
+<label for="msg">请输入信息内容:</label>
+<textarea id="msg" rows="5" cols="30" onblur="msgText()" required></textarea>
+
+<input type="button"  value="打电话" onclick="window.android.call(num)"  />
+<input type="submit" value="发送短信" onclick="window.android.sendMsg(num,msgContent)"  />
+</body>
+</html>
